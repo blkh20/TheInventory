@@ -25,25 +25,25 @@ import java.io.IOException;
 public class addproduct {
     private int PICK_IMAGE_REQUEST = 1;
     ProductValidator PV = new ProductValidator();
-    ProductDbHelper DB = new ProductDbHelper(this);
+    ProductDbHelper DB = new ProductDbHelper(this);//cannot be applied to context
     Uri uri;
     TextView errorMsg;
 
-    @Override
+    @Override//does not override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.add_product);
+        super.onCreate(savedInstanceState);//cannot resolve oncreate
+        setContentView(R.layout.add_product);//cannot resolve method
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        Button upload = (Button) findViewById(R.id.upload);
-        Button add_db = (Button) findViewById(R.id.add_db);
-        final TextView errorMsg = (TextView) findViewById(R.id.error_message);
+        Button upload = (Button) findViewById(R.id.upload);//cannot resolve method
+        Button add_db = (Button) findViewById(R.id.add_db);//cannot resolve method
+        final TextView errorMsg = (TextView) findViewById(R.id.error_message);//cannot resolve method
 
-        final EditText add_product_name = (EditText) findViewById(R.id.add_product_name);
-        final EditText add_product_price = (EditText) findViewById(R.id.add_product_price);
-        final EditText add_quantity = (EditText) findViewById(R.id.add_quantity);
-        final EditText contact = (EditText) findViewById(R.id.contact);
+        final EditText add_product_name = (EditText) findViewById(R.id.add_product_name);//cannot resolve method
+        final EditText add_product_price = (EditText) findViewById(R.id.add_product_price);//cannot resolve method
+        final EditText add_quantity = (EditText) findViewById(R.id.add_quantity);//cannot resolve method
+        final EditText contact = (EditText) findViewById(R.id.contact);//cannot resolve method
 
        upload.setOnClickListener(new View.OnClickListener() {
 
@@ -71,8 +71,8 @@ public class addproduct {
                         DB.addProduct(pc);
 
                         Intent i = new Intent();
-                        setResult(RESULT_OK, i);
-                        finish();
+                        setResult(RESULT_OK, i);//cannot resolve method
+                        finish();//cannot resolve method
                     }
                 }
             }
@@ -94,7 +94,7 @@ public class addproduct {
 
                 checkWriteToExternalPerms();
                 intent.setType("image/*");
-                startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);
+                startActivityForResult(Intent.createChooser(intent, "Select Picture"), PICK_IMAGE_REQUEST);//cannot resolve method
 
             }
 
@@ -103,7 +103,7 @@ public class addproduct {
 
     private void checkWriteToExternalPerms() {
         if (Build.VERSION.SDK_INT >= 23) {
-            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+            if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)//wrong first arguement
                     != PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(this, android.Manifest.permission.READ_EXTERNAL_STORAGE)
                     != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(this,
@@ -138,14 +138,14 @@ public class addproduct {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+        super.onActivityResult(requestCode, resultCode, data);//cannot resolve method
 
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {//cannot resolve method
 
             uri = data.getData();
             String[] projection = {MediaStore.Images.Media.DATA};
 
-            Cursor cursor = getContentResolver().query(uri, projection, null, null, null);
+            Cursor cursor = getContentResolver().query(uri, projection, null, null, null);//cannot resolve method
             cursor.moveToFirst();
 
             int columnIndex = cursor.getColumnIndex(projection[0]);
@@ -154,9 +154,9 @@ public class addproduct {
             cursor.close();
 
             try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);//cannot resolve method
 
-                ImageView imageView = (ImageView) findViewById(R.id.upload);
+                ImageView imageView = (ImageView) findViewById(R.id.upload);//unexpected cast to imageview-this error I can fix
                 imageView.setImageBitmap(bitmap);
             } catch (IOException e) {
                 e.printStackTrace();
