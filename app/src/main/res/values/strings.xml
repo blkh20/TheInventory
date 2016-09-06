@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">TheInventory</string>
+    <string name="add">Add a Product</string>
+    <string name="product_name">Product Name:</string>
+    <string name="enter_name">Please enter the product name.</string>
+    <string name="price_product">Price: $</string>
+    <string name="enter_price">Please enter the product price.</string>
+    <string name="quantity_product">Quantity:</string>
+    <string name="enter_quantity">Please enter the amount desired.</string>
+    <string name="confirm">Confirm the amount purchased.</string>
+    <string name="submit_button">Update!</string>
+    <string name="quantity_sold">Quantity Sold:</string>
+    <string name="contact">Preferred Contact Info</string>
+    <string name="add_image">Upload Photo</string>
+    <string name="add_db">Update DB!</string>
+</resources>
