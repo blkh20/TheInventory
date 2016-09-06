@@ -41,7 +41,7 @@ public class ProductDbHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    // code to add the new habit
+    // code to add the new Product
     public void addProduct(ProdClass product) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -57,7 +57,7 @@ public class ProductDbHelper extends SQLiteOpenHelper {
         db.close(); // Closing database connection
     }
 
-    // code to get the single habit
+    // code to get the single Product
     public ProdClass getProduct(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
@@ -105,7 +105,7 @@ public class ProductDbHelper extends SQLiteOpenHelper {
         return productList;
     }
 
-    public Cursor getHabit() {
+    public Cursor getCursor() {
         SQLiteDatabase db = this.getReadableDatabase();
 
         String query = "Select * FROM " + ProductContract.ProductEntry.TABLE_NAME + ";";

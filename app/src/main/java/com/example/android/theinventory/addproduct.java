@@ -37,7 +37,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -48,7 +47,7 @@ import java.io.InputStream;
 /**
  * Created by BlkH20 on 9/6/2016.
  */
-public class addproduct extends Context {
+public class addproduct {
     private int PICK_IMAGE_REQUEST = 1;
     ProductValidator PV = new ProductValidator();
     ProductDbHelper DB = new ProductDbHelper(this);
