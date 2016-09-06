@@ -34,18 +34,18 @@ public class ProductAdapter extends ArrayAdapter<ProdClass> {
         final ProdClass currentProduct = getItem(position);
 
 
-        Button btnBuy = (Button) listItemView.findViewById(R.id.buyProd);
+        Button btnBuy = (Button) listItemView.findViewById(R.id.SUBMIT);
 
-        TextView tvProductName = (TextView) listItemView.findViewById(R.id.dbProductName);
+        TextView tvProductName = (TextView) listItemView.findViewById(R.id.add_product_name);
         tvProductName.setText(currentProduct.getProductName());
 
-        final TextView tvProductQty = (TextView) listItemView.findViewById(R.id.dbProductQantity);
+        final TextView tvProductQty = (TextView) listItemView.findViewById(R.id.add_quantity);
         tvProductQty.setText(Integer.toString(currentProduct.getProductQty()));
 
-        TextView tvProductPrice = (TextView) listItemView.findViewById(R.id.dbProductPrice);
+        TextView tvProductPrice = (TextView) listItemView.findViewById(R.id.add_product_price);
         tvProductPrice.setText(Float.toString(currentProduct.getProductPrice()));
 
-        final TextView tvProductSold = (TextView) listItemView.findViewById(R.id.dbProductSold);
+        final TextView tvProductSold = (TextView) listItemView.findViewById(R.id.confirm_quantity);
         tvProductSold.setText(Integer.toString(currentProduct.getProductQtySold()));
 
         btnBuy.setOnClickListener(new View.OnClickListener() {

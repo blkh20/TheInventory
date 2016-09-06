@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context="com.example.android.theinventory.addproduct" >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,8 +21,7 @@
             android:layout_height="wrap_content"
             android:maxLines="1"
             android:hint="Name goes here"
-            android:id="@+id/add_product_name"
-            android:paddingBottom="20dp"/>
+            android:id="@+id/add_product_name" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

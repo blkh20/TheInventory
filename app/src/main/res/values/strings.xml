@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">TheInventory</string>
+    <string name="app_name">The Inventory App</string>
+    <string name="addproduct">Add Product</string>
+    <string name="product_details">Product Details</string>
+    <string name="instruction">Click the button to add a product.</string>
     <string name="add">Add a Product</string>
     <string name="product_name">Product Name:</string>
     <string name="enter_name">Please enter the product name.</string>

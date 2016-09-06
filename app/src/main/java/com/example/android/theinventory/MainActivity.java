@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         {
             if(productStorage.size() == 0)
             {
-                LV.setVisibility(View.VISIBLE);
+                LV.setVisibility(View.GONE);
             }
             else
             {
